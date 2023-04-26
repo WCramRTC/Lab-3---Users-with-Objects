@@ -30,7 +30,7 @@ namespace Lab_3___Users_with_Objects
 
         public override string ToString()
         {
-            return $"{_firtName} {_lastName}";
+            return $"{_firtName} {_lastName} - Total Price: {ItemsInCart.TotalCharge.ToString("C")}";
         }
     }
 }

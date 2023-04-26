@@ -8,14 +8,16 @@ namespace Lab_3___Users_with_Objects
 {
     internal class Watch : ItemsInCart
     {
-        int _priceofWatch;
+        int _priceofWatch = 70;
         public Watch(int amountOfItem) : base(amountOfItem) 
         {
-            _priceofWatch = 50;
+            AmountOfItem = amountOfItem;
         }
 
-        public int PriceofWatch { get => _priceofWatch;}
-        public override void Charge()
+        public int PriceofWatch { get => _priceofWatch; }
+        //public int AmountOfWatch { get => _amountOfWatch; set => _amountOfWatch = value; }
+
+        public override void ChargeItem()
         {
             _priceofWatch *= AmountOfItem;
             TotalCharge += _priceofWatch *= AmountOfItem;

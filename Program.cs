@@ -9,14 +9,14 @@
             Buyer buyer1 = new Buyer("M", "H");
            
             Watch watch = new Watch(3);
-            Wallet wallet = new Wallet(4);
+            Wallet wallet = new Wallet(2);
 
             buyer1.addItem(watch);//add items to list
             buyer1.addItem(wallet);
 
             
-            watch.Charge(); //chrge
-            wallet.Charge();
+            watch.ChargeItem(); //charge
+            wallet.ChargeItem();
 
             Console.WriteLine(watch);
             Console.WriteLine(wallet);
