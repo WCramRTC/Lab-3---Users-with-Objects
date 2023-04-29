@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Lab_3___Users_with_Objects
 {
-    internal class Watch : ItemsInCart
+    internal class Watch : Product
     {
-        int _priceofWatch = 70;
+        static int _priceofWatch;
         public Watch(int amountOfItem) : base(amountOfItem) 
         {
+            _priceofWatch = 50;
             AmountOfItem = amountOfItem;
         }
 
-        public int PriceofWatch { get => _priceofWatch; }
-        //public int AmountOfWatch { get => _amountOfWatch; set => _amountOfWatch = value; }
-
+        public static int PriceofWatch { get => _priceofWatch; }
+        
         public override void ChargeItem()
         {
             _priceofWatch *= AmountOfItem;
-            TotalCharge += _priceofWatch *= AmountOfItem;
+            TotalCharge += _priceofWatch;
         }
         public override string ToString()
         {

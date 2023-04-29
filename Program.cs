@@ -6,22 +6,32 @@
         {
             List<Buyer> user = new List<Buyer>();
            
-            Buyer buyer1 = new Buyer("M", "H");
-           
-            Watch watch = new Watch(3);
-            Wallet wallet = new Wallet(2);
+            Buyer buyer1 = new Buyer("Monika", "H");
+          //First create instance for item
+            Watch watch = new Watch(1);
+            Wallet wallet = new Wallet(3);
 
-            buyer1.addItem(watch);//add items to list
-            buyer1.addItem(wallet);
 
-            
-            watch.ChargeItem(); //charge
+          //Calculate, charge them
+            watch.ChargeItem(); 
             wallet.ChargeItem();
 
-            Console.WriteLine(watch);
-            Console.WriteLine(wallet);
-            Console.WriteLine(buyer1);
-           
+          //Create cart instance
+            Cart cart = new Cart();
+
+          //Add Item to cart
+            cart.AddItemtoCart(watch);
+            cart.AddItemtoCart(wallet);
+
+          //add shoopingcart to the buyer
+            buyer1.AddShoppingCart(cart);
+
+            user.Add(buyer1);
+
+            Console.WriteLine(user[0]);
+            //Console.WriteLine(user1);
+
+
 
 
 

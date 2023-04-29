@@ -10,27 +10,30 @@ namespace Lab_3___Users_with_Objects
     {
         string _firtName;
         string _lastName;
-        List<ItemsInCart> _inCart;
+        List<Cart> _inCart;
 
         public Buyer(string firtName, string lastName)
         {
             FirtName = firtName;
             LastName = lastName;
-            _inCart = new List <ItemsInCart>();
+            _inCart = new List <Cart>();
         }
 
         public string FirtName { get => _firtName; set => _firtName = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
-        internal List<ItemsInCart> InCart { get => _inCart; }
-
-        public void addItem(ItemsInCart itemInCart)
+        internal List<Cart> InCart { get => _inCart; }
+        
+        public void AddShoppingCart(Cart cart)
         {
-        _inCart.Add(itemInCart);
+             _inCart.Add(cart);
         }
 
         public override string ToString()
         {
-            return $"{_firtName} {_lastName} - Total Price: {ItemsInCart.TotalCharge.ToString("C")}";
+            return $"{_firtName} {_lastName} - " +
+                $"Amount of watch:{Watch.AmountOfItem}, Price:{Watch.PriceofWatch.ToString("C")}" +
+                $"\nAmount of wallet:{Wallet.AmountOfItem}, Price:{Wallet.PriceOfWallet.ToString("C")}" +
+                $"\nTotal Price:{Product.TotalCharge.ToString("C")}";
         }
     }
 }
