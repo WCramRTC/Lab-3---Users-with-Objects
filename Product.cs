@@ -8,21 +8,19 @@ namespace Lab_3___Users_with_Objects
 {
     internal class Product
     {
-        static int _amountOfItem;
-        static int _totalCharge;
 
-        public Product(int amountOfItem)
+        double _price;
+
+        public Product(double price)
         {
-            _amountOfItem = amountOfItem;
-
+            _price = price;
         }
-        public static int AmountOfItem { get => _amountOfItem; protected set => _amountOfItem = value; }
-        public static int TotalCharge { get => _totalCharge; set => _totalCharge = value; }
 
+        public double Price { get => _price; set => _price = value; }
 
-        public virtual void ChargeItem()
+        public override string ToString()
         {
-            _totalCharge = 0;
+            return $"{this.GetType().Name} - Price: {this.Price.ToString("c")}";
         }
     }//class
 }//namespace

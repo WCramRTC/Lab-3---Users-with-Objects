@@ -8,27 +8,36 @@
            
             Buyer buyer1 = new Buyer("Monika", "H");
           //First create instance for item
-            Watch watch = new Watch(1);
-            Wallet wallet = new Wallet(3);
+
+            // Create new items with a price
+            Watch watch = new Watch(70);
+            Wallet wallet = new Wallet(30);
+            //Console.WriteLine(watch);
+            //Console.WriteLine(wallet);
+
+            buyer1.AddItemToCart(watch, 5);
+            buyer1.AddItemToCart(wallet, 3);
+            buyer1.DisplayCartInformation();
 
 
-          //Calculate, charge them
-            watch.ChargeItem(); 
-            wallet.ChargeItem();
+            //buyer1.InCart.DisplayItemsInCart();
 
-          //Create cart instance
-            Cart cart = new Cart();
+            //ItemInCart itemInCart = new ItemInCart(watch, 5);
+            //Console.WriteLine(itemInCart);
+            
 
-          //Add Item to cart
-            cart.AddItemtoCart(watch);
-            cart.AddItemtoCart(wallet);
+            //ItemInCart watches = new ItemInCart(new Watch(70), 5);
 
-          //add shoopingcart to the buyer
-            buyer1.AddShoppingCart(cart);
+            ////Create cart instance
+            //  Cart cart = new Cart();
 
-            user.Add(buyer1);
 
-            Console.WriteLine(user[0]);
+            //add shoopingcart to the buyer
+            //buyer1.AddShoppingCart(cart);
+
+            //user.Add(buyer1);
+
+            //Console.WriteLine(user[0]);
             //Console.WriteLine(user1);
 
 

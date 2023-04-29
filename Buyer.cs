@@ -10,30 +10,37 @@ namespace Lab_3___Users_with_Objects
     {
         string _firtName;
         string _lastName;
-        List<Cart> _inCart;
+        Cart _inCart;
+
+        // Remove the LIST of Cart, and only have a Cart.
 
         public Buyer(string firtName, string lastName)
         {
             FirtName = firtName;
             LastName = lastName;
-            _inCart = new List <Cart>();
+            _inCart = new Cart();
         }
 
         public string FirtName { get => _firtName; set => _firtName = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
-        internal List<Cart> InCart { get => _inCart; }
+        internal Cart InCart { get => _inCart; }
         
-        public void AddShoppingCart(Cart cart)
+        public void AddItemToCart(Product product, int quantity )
         {
-             _inCart.Add(cart);
+            ItemInCart newItem = new ItemInCart(product, quantity);
+            _inCart.AddItemToCart(newItem);
         }
+
+        public void DisplayCartInformation()
+        {
+            Console.WriteLine(ToString());
+            _inCart.DisplayItemsInCart();
+        }
+
 
         public override string ToString()
         {
-            return $"{_firtName} {_lastName} - " +
-                $"Amount of watch:{Watch.AmountOfItem}, Price:{Watch.PriceofWatch.ToString("C")}" +
-                $"\nAmount of wallet:{Wallet.AmountOfItem}, Price:{Wallet.PriceOfWallet.ToString("C")}" +
-                $"\nTotal Price:{Product.TotalCharge.ToString("C")}";
+            return $"{_firtName} {_lastName}";
         }
     }
 }
